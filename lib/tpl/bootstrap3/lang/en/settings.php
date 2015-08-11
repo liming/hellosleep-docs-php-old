@@ -1,6 +1,6 @@
 <?php
 /**
- * English language file for config
+ * Language file for config
  *
  * @author   Giuseppe Di Terlizzi <giuseppe.diterlizzi@gmail.com>
  * @license  GPL 2 (http://www.gnu.org/licenses/gpl.html)
@@ -20,10 +20,12 @@ $lang['individualTools']     = 'Split the Tools in individual menu in navbar';
 $lang['showTools_o_never']   = 'Never';
 $lang['showTools_o_logged']  = 'When logged in';
 $lang['showTools_o_always']  = 'Always';
+$lang['showSearchForm']      = 'Display Search form in navbar';
+$lang['showSearchForm_o_never']  = 'Never';
+$lang['showSearchForm_o_logged'] = 'When logged in';
+$lang['showSearchForm_o_always'] = 'Always';
 $lang['sidebarPosition']     = 'DokuWiki Sidebar position (<code>left</code> or <code>right</code>)';
-$lang['rightSidebar']        = 'The Right Sidebar page name, empty field disables the right sidebar.<br/>The Right Sidebar is displayed only when the default DokuWiki <a href="#config___sidebar">sidebar</a> is enabled and is on the <code>left</code> position (see the <a href="#config___tpl____bootstrap3____sidebarPosition">
-tpl»bootstrap3»sidebarPosition</a> configuration). If do you want only the DokuWiki sidebar on right position, set the <a href="#config___tpl____bootstrap3____sidebarPosition">
-tpl»bootstrap3»sidebarPosition</a> configuration with <code>right</code> value';
+$lang['rightSidebar']        = 'The Right Sidebar page name, empty field disables the right sidebar.<br/>The Right Sidebar is displayed only when the default DokuWiki <a href="#config___sidebar">sidebar</a> is enabled and is on the <code>left</code> position (see the <a href="#config___tpl____bootstrap3____sidebarPosition">tpl»bootstrap3»sidebarPosition</a> configuration). If do you want only the DokuWiki sidebar on right position, set the <a href="#config___tpl____bootstrap3____sidebarPosition">tpl»bootstrap3»sidebarPosition</a> configuration with <code>right</code> value';
 $lang['tableFullWidth']      = 'Enable 100% full table width (Bootstrap default)';
 $lang['semantic']            = 'Enable semantic data';
 $lang['schemaOrgType']       = 'Schema.org type (<code>Article</code>, <code>NewsArticle</code>, <code>TechArticle</code>, <code>BlogPosting</code>)';

@@ -162,11 +162,19 @@ function _tpl_action_item($action, $icon, $linkonly = false) {
   }
 
   if ($link = tpl_action($action, 1, 0, 1, '<i class="'.$icon.'"></i> ')) {
-    if ($linkonly) return $link;
+
+    if ($linkonly) {
+      if ($ACT == $action) {
+        $link = str_replace('class="action ', 'class="action active ', $link);
+      }
+      return $link;
+    }
+
     return '<li' . (($ACT == $action) ? ' class="active"' : ''). '>' . $link . '</li>';
   }
 
   return '';
+
 }
 
 /**
@@ -192,13 +200,13 @@ function _tpl_get_container_grid() {
     return 'container' . (($fluidContainer) ? '-fluid' : '');
   }
 
-  foreach (split(' ', tpl_getConf('leftSidebarGrid')) as $grid) {
-    list($col, $media, $size) = split('-', $grid);
+  foreach (explode(' ', tpl_getConf('leftSidebarGrid')) as $grid) {
+    list($col, $media, $size) = explode('-', $grid);
     $grids[$media]['left'] = (int) $size;
   }
 
-  foreach (split(' ', tpl_getConf('rightSidebarGrid')) as $grid) {
-    list($col, $media, $size) = split('-', $grid);
+  foreach (explode(' ', tpl_getConf('rightSidebarGrid')) as $grid) {
+    list($col, $media, $size) = explode('-', $grid);
     $grids[$media]['right'] = (int) $size;
   }
 
@@ -237,7 +245,7 @@ function _tpl_user_homepage_link() {
  * @param   string   $toc from tpl_toc()
  * @return  string
  */
-function bootstrap_toc($toc) {
+function bootstrap3_toc($toc) {
 
   if (! $toc) return false;
 
@@ -261,8 +269,9 @@ function bootstrap_toc($toc) {
       foreach ($ul->getElementsByTagName('li') as $li) {
 
         if ($div = $li->getElementsByTagName('div')->item(0)) {
-          $a = $li->getElementsByTagName('a')->item(0);
-          $div->parentNode->replaceChild($a, $div);
+          if ($a = $li->getElementsByTagName('a')->item(0)) {
+            $div->parentNode->replaceChild($a, $div);
+          }
         }
 
       }
@@ -291,7 +300,7 @@ function bootstrap_toc($toc) {
  * @param   string   $sidebar
  * @return  string
  */
-function bootstrap_sidebar($sidebar) {
+function bootstrap3_sidebar($sidebar) {
 
   if (! $sidebar) return false;
 
@@ -300,17 +309,18 @@ function bootstrap_sidebar($sidebar) {
 
   foreach ($dom->getElementsByTagName('ul') as $ul) {
 
-    $ul->setAttribute('class', 'nav nav-pills nav-stacked');
-
     foreach ($ul->getElementsByTagName('li') as $li) {
+
+      $ul->setAttribute('class', 'nav nav-pills nav-stacked');
 
       if ($curid = $li->getElementsByTagNAme('span')->item(0)) {
         $li->setAttribute('class', $li->getAttribute('class') . ' active');
       }
 
       if ($div = $li->getElementsByTagName('div')->item(0)) {
-        $a = $li->getElementsByTagName('a')->item(0);
-        $div->parentNode->replaceChild($a, $div);
+        if ($a = $li->getElementsByTagName('a')->item(0)) {
+          $div->parentNode->replaceChild($a, $div);
+        }
       }
 
     }
@@ -345,7 +355,7 @@ function bootstrap_sidebar($sidebar) {
  * @param bool $autocomplete
  * @return bool
  */
-function bootstrap_searchform($ajax = true, $autocomplete = true) {
+function bootstrap3_searchform($ajax = true, $autocomplete = true) {
 
     global $lang;
     global $ACT;
@@ -354,20 +364,104 @@ function bootstrap_searchform($ajax = true, $autocomplete = true) {
     // don't print the search form if search action has been disabled
     if (!actionOK('search')) return false;
 
-    print '<form action="'.wl().'" accept-charset="utf-8" class="form-inline search" id="dw__search" method="get" role="search"><div class="no">';
+    print '<form action="'.wl().'" accept-charset="utf-8" class="navbar-form navbar-left search" id="dw__search" method="get" role="search"><div class="no">';
+    
+    print '<div class="form-group">';
 
     print '<input type="hidden" name="do" value="search" />';
 
-    print '<input type="text" ';
+    print '<input ';
     if ($ACT == 'search') print 'value="'.htmlspecialchars($QUERY).'" ';
     if (!$autocomplete) print 'autocomplete="off" ';
     print 'id="qsearch__in" type="search" placeholder="'.$lang['btn_search'].'" accesskey="f" name="id" class="edit form-control" title="[F]" />';
 
-    print '<button type="submit" class="btn btn-default" title="'.$lang['btn_search'].'"><i class="glyphicon glyphicon-search"></i></button>';
+    print '</div>';
+
+    print ' <button type="submit" class="btn btn-default" title="'.$lang['btn_search'].'"><i class="glyphicon glyphicon-search"></i><span class="hidden-lg hidden-md hidden-sm"> '.$lang['btn_search'].'</span></button>';
 
     if ($ajax) print '<div id="qsearch__out" class="panel panel-default ajax_qsearch JSpopup"></div>';
     print '</div></form>';
-
+    
     return true;
+}
+
+
+/**
+ * Return all DokuWiki actions for tools menu
+ *
+ * @author  Giuseppe Di Terlizzi <giuseppe.diterlizzi@gmail.com>
+ *
+ * @return  array
+ */
+function _tpl_tools() {
+
+  global $ACT;
+
+  return array(
+  
+    'user' => array(
+      'icon'  => 'glyphicon glyphicon-user',
+      'items' => array(
+        'admin'    => array('icon' => 'glyphicon glyphicon-cog'),
+        'profile'  => array('icon' => 'glyphicon glyphicon-refresh'),
+        #'register' => array('icon' => 'glyphicon glyphicon-edit'),
+        #'login'    => array('icon' => 'glyphicon glyphicon-log-'.(!empty($_SERVER['REMOTE_USER']) ? 'out' : 'in')),
+      )
+    ),
+  
+    'site' => array(
+      'icon'  => 'glyphicon glyphicon-cog',
+      'items' => array(
+        'recent' => array('icon' => 'glyphicon glyphicon-list-alt'),
+        'media'  => array('icon' => 'glyphicon glyphicon-picture'),
+        'index'  => array('icon' => 'glyphicon glyphicon-list'),
+      )
+    ),
+  
+    'page' => array(
+      'icon'  => 'glyphicon glyphicon-file',
+      'items' => array(
+        'edit'       => array('icon' => 'glyphicon glyphicon-' . (($ACT == 'edit') ? 'file' : 'edit')),
+        'discussion' => array('icon' => 'glyphicon glyphicon-comment'),
+        'revert'     => array('icon' => 'glyphicon glyphicon-repeat'),
+        'revisions'  => array('icon' => 'glyphicon glyphicon-time'),
+        'backlink'   => array('icon' => 'glyphicon glyphicon-link'),
+        'subscribe'  => array('icon' => 'glyphicon glyphicon-envelope'),
+        'top'        => array('icon' => 'glyphicon glyphicon-chevron-up'),
+      )
+    ),
+  
+  );
+
+}
+
+
+function bootstrap3_tools_menu() {
+  
+  $tools = _tpl_tools();
+
+  foreach ($tools as $id => $menu) {
+    foreach ($menu['items'] as $action => $item) {
+      $tools[$id]['menu'][$action] = _tpl_action_item($action, $item['icon']);
+    }
+  }
+
+  return $tools;
+
+}
+
+
+function bootstrap3_toolbar() {
+
+  $tools = _tpl_tools();
+
+  foreach ($tools as $id => $menu) {
+    foreach ($menu['items'] as $action => $item) {
+      $tools[$id]['menu'][$action] = str_replace('class="action ', 'class="action btn btn-default ', _tpl_action_item($action, $item['icon'], 1));
+    }
+  }
+
+  return $tools;
+
 }
 

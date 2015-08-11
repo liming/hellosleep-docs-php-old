@@ -1,11 +1,1 @@
-a:2:{s:7:"current";a:10:{s:4:"date";a:2:{s:7:"created";i:1438522087;s:8:"modified";i:1438522373;}s:7:"creator";s:7:"Ming Li";s:4:"user";s:5:"match";s:11:"last_change";a:7:{s:4:"date";i:1438522373;s:2:"ip";s:15:"113.235.113.185";s:4:"type";s:1:"E";s:2:"id";s:11:"keys:长假";s:4:"user";s:5:"match";s:3:"sum";s:0:"";s:5:"extra";s:0:"";}s:11:"contributor";a:1:{s:5:"match";s:7:"Ming Li";}s:7:"subject";a:2:{i:0;s:6:"长假";i:1;s:12:"无所事事";}s:8:"relation";a:2:{s:10:"references";a:3:{s:10:"tag:长假";b:0;s:16:"tag:无所事事";b:0;s:17:"keys:无所事事";b:0;}s:10:"firstimage";s:0:"";}s:5:"title";s:15:"漫长的假期";s:11:"description";a:2:{s:15:"tableofcontents";a:3:{i:0;a:4:{s:3:"hid";s:15:"漫长的假期";s:5:"title";s:15:"漫长的假期";s:4:"type";s:2:"ul";s:5:"level";i:1;}i:1;a:4:{s:3:"hid";s:6:"分析";s:5:"title";s:6:"分析";s:4:"type";s:2:"ul";s:5:"level";i:3;}i:2;a:4:{s:3:"hid";s:6:"建议";s:5:"title";s:6:"建议";s:4:"type";s:2:"ul";s:5:"level";i:3;}}s:8:"abstract";s:333:"长假 无所事事
-
-漫长的假期
-
-分析
-
-睡眠是一种需求。
-
-比较长的假期很多时候都对睡眠会有负面影响。尤其是学生或者老师放暑假的时候很容易失眠。因为生活和睡眠出现了两点变化：
-
-	*  从繁忙的学习或者工作突然到了闲散在家中，睡眠的需求骤减。";}s:8:"internal";a:2:{s:5:"cache";b:1;s:3:"toc";b:1;}}s:10:"persistent";a:5:{s:4:"date";a:2:{s:7:"created";i:1438522087;s:8:"modified";i:1438522373;}s:7:"creator";s:7:"Ming Li";s:4:"user";s:5:"match";s:11:"last_change";a:7:{s:4:"date";i:1438522373;s:2:"ip";s:15:"113.235.113.185";s:4:"type";s:1:"E";s:2:"id";s:11:"keys:长假";s:4:"user";s:5:"match";s:3:"sum";s:0:"";s:5:"extra";s:0:"";}s:11:"contributor";a:1:{s:5:"match";s:7:"Ming Li";}}}
+a:2:{s:7:"current";a:1:{s:11:"last_change";b:0;}s:10:"persistent";a:1:{s:11:"last_change";b:0;}}

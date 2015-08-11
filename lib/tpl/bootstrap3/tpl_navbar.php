@@ -52,9 +52,9 @@
 
       <div class="navbar-right">
 
-        <div class="navbar-left navbar-form">
-          <?php bootstrap_searchform() ?>
-        </div>
+        <?php if ($showSearchForm): ?>
+          <?php bootstrap3_searchform() ?>
+        <?php endif; ?>
 
         <?php
           include_once(dirname(__FILE__).'/tpl_tools_menu.php');
@@ -97,3 +97,4 @@
     </div>
   </div>
 </nav>
+
