@@ -145,6 +145,17 @@ input, textarea, select {
   max-width: 20em;
 }
 
+#dw__user_menu .page-header {
+  margin: 20px 0 10px;
+}
+
+#dw__user_menu .nav > li > a {
+  padding: 5px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden !important;
+}
+
 .dw__sidebar .nav li a {
   padding: 5px 10px;
 }
@@ -259,6 +270,22 @@ a.iw_user {
   list-style-type: none;
 }
 
+/* Extension Manager */
+#extension__manager .panelHeader,
+#extension__manager ul.tabs li.active a {
+  background-color: initial;
+}
+
+#extension__manager ul.tabs li.active a {
+  border-bottom-color: white; /* FIXME */
+}
+
+.profile-image {
+  position: relative;
+  top: -5px;
+  float: left;
+  left: -5px;
+}
 
 /** Override Bootstrap3 style */
 
@@ -288,4 +315,22 @@ a.iw_user {
 
 ul.btn-group {
   padding: 0;
+}
+
+
+/** Custom DropDown menu with multiple columns */
+.dropdown-row {
+  min-width: 480px;
+}
+
+.dropdown-row > ul {
+  position: initial;
+  border: 0px;
+  box-shadow: initial;
+}
+
+.dropdown-row > ul li a {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden !important;
 }

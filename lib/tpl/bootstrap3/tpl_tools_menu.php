@@ -1,5 +1,4 @@
 <?php
-
 /**
  * DokuWiki Bootstrap3 Template: Tools Menu
  *
@@ -26,7 +25,7 @@
       <li class="dropdown-header hidden-xs hidden-sm">
         <i class="<?php echo $menu['icon'] ?>"></i> <?php echo $lang[$id.'_tools'] ?>
       </li>
-      <?php _tpl_toolsevent($id.'tools', $menu['menu']) ?>
+      <?php tpl_toolsevent($id.'tools', $menu['menu']) ?>
 
     </ul>
   </li>
@@ -36,7 +35,7 @@
   <li class="dropdown">
 
     <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="<?php $lang['tools'] ?>">
-      <i class="glyphicon glyphicon-wrench"></i> <span class="hidden-lg hidden-md hidden-sm"><?php echo $lang['tools'] ?></span> <span class="caret"></span>
+      <i class="fa fa-fw fa-wrench"></i> <span class="hidden-lg hidden-md hidden-sm"><?php echo $lang['tools'] ?></span> <span class="caret"></span>
     </a>
 
     <ul class="dropdown-menu tools" role="menu">
@@ -45,10 +44,10 @@
       <li class="dropdown-header">
         <i class="<?php echo $menu['icon'] ?>"></i> <?php echo $lang[$id.'_tools'] ?>
       </li>
-      <?php _tpl_toolsevent($id.'tools', $menu['menu']) ?>
+      <?php tpl_toolsevent($id.'tools', $menu['menu']) ?>
 
       <?php if ($max > $i): ?>
-      <li class="divider"></li>
+      <li class="divider" role="separator"></li>
       <?php endif; ?>
 
     <?php $i++; endforeach; ?>

@@ -8,29 +8,34 @@
 
 $lang['discussionPage']      = 'コメントページ名（<code>discussion:@ID@</code> がデフォルト。<code>@ID@</code> は現在ページ名に置き換えるプレースホルダー）。リンクしない場合は空にする。';
 $lang['showDiscussion']      = 'ツールメニューにコメントリンクを表示する';
-$lang['showLoginOnFooter']   = 'Display a "little" login link on footer. This option is useful when <code>hideLoginLink</code> is on';
-$lang['hideLoginLink']       = 'Hide the login button in navbar. This option is useful in "read-only" DokuWiki installations (eg. blog, personal website)';
+$lang['showLoginOnFooter']   = 'フッターに「小さな」ログインリンクを表示する。<code>hideLoginLink</code> を有効にした場合、便利です。';
+$lang['hideLoginLink']       = 'navbar 上のログインボタンを非表示にする。「読取り専用」の DokuWiki サイト（例：ブログ・個人的な Web サイト）には便利です。';
 $lang['showUserHomeLink']    = 'navbar にユーザーのホームページリンクを表示する';
 $lang['showCookieLawBanner'] = 'Display the Cookie Law banner on footer';
 $lang['cookieLawBannerPage'] = 'Cookie Law banner page name';
 $lang['cookieLawPolicyPage'] = 'Cookie Law policy page name';
-$lang['browserTitle']        = 'DokuWiki browser title (default is <code>@TITLE@ [@WIKI@]</code>, where <code>@TITLE@</code> placeholder replace the current page title and <code>@WIKI@</code> replace the DokuWiki name - see <a href="#config___title">title</a> config';
-$lang['showTools']           = 'navbar にツールを表示する';
-$lang['individualTools']     = 'Split the Tools in individual menu in navbar';
+$lang['browserTitle']        = 'ブラウザー上の DokuWiki の見出し（ <code>@TITLE@ [@WIKI@]</code> がデフォルトです。<code>@TITLE@</code> は現在のページ見出しに置換え。<code>@WIKI@</code> は Wiki タイトルに置換え。<a href="#config___title">title</a> の設定内容を参照して下さい。）';
+$lang['showIndividualTool']  = 'Enable/Disable individual tool in navbar';
+$lang['showTools']           = 'navbar 上のツール表示';
+$lang['individualTools']     = 'navbar 上のツールを個々のメニューに分割する';
 $lang['showTools_o_never']   = '表示しない';
 $lang['showTools_o_logged']  = 'ログイン時に表示する';
 $lang['showTools_o_always']  = '常に表示する';
+$lang['showSearchForm']      = 'navbar 上の検索フォーム表示';
+$lang['showSearchForm_o_never']  = '表示しない';
+$lang['showSearchForm_o_logged'] = 'ログイン時に表示する';
+$lang['showSearchForm_o_always'] = '常に表示する';
 $lang['sidebarPosition']     = 'DokuWiki サイドバーの配置（<code>left</code> 又は <code>right</code>）';
-$lang['rightSidebar']        = '右サイドバーのページ名。空欄で右サイドバー無効。デフォルトの DokuWiki <a href="#config___sidebar">サイドバー</a>が有効で <code>left</code> に配置している場合（<a href="#config___tpl____bootstrap3____sidebarPosition">
-tpl»bootstrap3»sidebarPosition</a> 設定を参照）のみ右サイドバーを表示します。DokuWiki サイドバーを右側に配置したい場合、<a href="#config___tpl____bootstrap3____sidebarPosition">
-tpl»bootstrap3»sidebarPosition</a> 設定を <code>right</code> にしてください。';
+$lang['rightSidebar']        = '右サイドバーのページ名。空欄で右サイドバー無効。デフォルトの DokuWiki <a href="#config___sidebar">サイドバー</a>が有効で <code>left</code> に配置している場合（<a href="#config___tpl____bootstrap3____sidebarPosition">tpl»bootstrap3»sidebarPosition</a> 設定を参照）のみ右サイドバーを表示します。DokuWiki サイドバーを右側に配置したい場合、<a href="#config___tpl____bootstrap3____sidebarPosition">tpl»bootstrap3»sidebarPosition</a> 設定を <code>right</code> にしてください。';
 $lang['tableFullWidth']      = '100% のテーブル幅を有効にする（Bootstrap のデフォルト）';
 $lang['semantic']            = 'semantic データを有効にする';
 $lang['schemaOrgType']       = 'Schema.org の型（<code>Article</code>, <code>NewsArticle</code>, <code>TechArticle</code>, <code>BlogPosting</code>）';
 $lang['showTranslation']     = '翻訳ツールバーを表示する（<em>Translation プラグイン</em>が必要）';
+$lang['showAdminMenu']       = 'Display Administration menu';
 $lang['inverseNavbar']       = 'navbar の色を反転する';
 $lang['fixedTopNavbar']      = 'navbar を上部に固定する';
 $lang['fluidContainer']      = 'Enable the fluid container (full-width of page)';
+$lang['fluidContainerBtn']   = 'Display a button in navbar to expand container';
 $lang['pageOnPanel']         = 'Enable the panel around the page';
 $lang['bootstrapTheme']      = 'Bootstrap テーマ';
 $lang['bootstrapTheme_o_default']    = 'Vanilla Bootstrap テーマ';

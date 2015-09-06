@@ -12,6 +12,8 @@ $showTools           = tpl_getConf('showTools') != 'never' &&
 $showSearchForm      = tpl_getConf('showSearchForm') != 'never' &&
                        ( tpl_getConf('showSearchForm') == 'always' || !empty($_SERVER['REMOTE_USER']) );
 $individualTools     = tpl_getConf('individualTools');
+$showIndividualTool  = tpl_getConf('showIndividualTool');
+$showAdminMenu       = tpl_getConf('showAdminMenu') && $INFO['isadmin'];
 $showUserHomeLink    = tpl_getConf('showUserHomeLink');
 $showLoginOnFooter   = tpl_getConf('showLoginOnFooter');
 $showLoginLink       = ! tpl_getConf('hideLoginLink') || ! empty($_SERVER['REMOTE_USER']);
@@ -33,12 +35,14 @@ $customTheme         = tpl_getConf('customTheme');
 $bootswatchTheme     = tpl_getConf('bootswatchTheme');
 $pageOnPanel         = tpl_getConf('pageOnPanel');
 $fluidContainer      = tpl_getConf('fluidContainer');
+$fluidContainerBtn   = tpl_getConf('fluidContainerBtn');
 $showPageInfo        = tpl_getConf('showPageInfo');
 $showBadges          = tpl_getConf('showBadges');
 $semantic            = tpl_getConf('semantic');
 $schemaOrgType       = tpl_getConf('schemaOrgType');
 $leftSidebarGrid     = tpl_getConf('leftSidebarGrid');
 $rightSidebarGrid    = tpl_getConf('rightSidebarGrid');
+$useGravatar         = tpl_getConf('useGravatar');
 $contentGrid         = _tpl_get_container_grid();
 $hideInThemeSwitcher = explode(',', tpl_getConf('hideInThemeSwitcher'));
 $bootstrapStyles     = array();
@@ -46,6 +50,9 @@ $tplConfigJSON       = array(
   'tableFullWidth' => (int) tpl_getConf('tableFullWidth'),
 );
 
+if($fluidContainerBtn) {
+  $fluidContainer = _tpl_fluid_container_button();
+}
 
 if ($showThemeSwitcher && $bootstrapTheme == 'bootswatch') {
 
