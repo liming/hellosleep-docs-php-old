@@ -107,3 +107,8 @@ app
 500
 let
 dev
+acl
+log
+irc
+gnu
+gpl
